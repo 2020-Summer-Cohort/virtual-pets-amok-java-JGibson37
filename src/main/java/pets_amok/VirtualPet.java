@@ -15,16 +15,19 @@ public abstract class VirtualPet {
         this.boredom = boredom;
     }
 
-    public int manipulateHealth(int hp) {
-        health += hp;
-        return health;
+    public String getName(){
+        return name;
+    }
+
+    public void health() {
+        health += 10;
     }
 
     public int getHealth() {
         return health;
     }
 
-    public int Boredom() {
+    public int boredom() {
         boredom -= 5;
         happiness += 10;
         return boredom;

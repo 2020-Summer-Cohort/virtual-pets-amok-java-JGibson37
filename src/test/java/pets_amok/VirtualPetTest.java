@@ -13,14 +13,14 @@ public class VirtualPetTest {
     @Test
     public void createHealthAndGetter(){
         VirtualPet underTest = new BasicPet("Billy",50,50,20);
-        underTest.manipulateHealth(20);
+        underTest.health();
         int result = underTest.getHealth();
-        assertEquals(70, result);
+        assertEquals(60, result);
     }
     @Test
     public void createBoredomGetterSetter(){
         VirtualPet underTest = new BasicPet("Billy",50,50,20);
-        underTest.Boredom();
+        underTest.boredom();
         int result = underTest.getBoredom();
         assertEquals(15,result);
     }
