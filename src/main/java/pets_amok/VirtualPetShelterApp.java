@@ -75,13 +75,18 @@ public class VirtualPetShelterApp {
                 System.out.println("Is the pet a Robot or is it Organic?");
                 String lifeForm = userInput.nextLine();
                 if (lifeForm.equalsIgnoreCase("robot") && animal.equalsIgnoreCase("cat")){
-                     new RoboticCat(name,50,50,20,20);
+                    RoboticCat roboticCat =  new RoboticCat(name,50,50,20,20);
+                    virtualPetShelter.admit(roboticCat);
                 }else if(lifeForm.equalsIgnoreCase("robot") && animal.equalsIgnoreCase("dog")){
-                    new RoboticDog(name,50,50,20,20);
+                   RoboticDog roboticDog = new RoboticDog(name,50,50,20,20);
+                    virtualPetShelter.admit(roboticDog);
                 }else if(lifeForm.equalsIgnoreCase("organic")&& animal.equalsIgnoreCase("cat")){
-                    new OrganicCat(name,50,50,20,20,20);
+                    OrganicCat organicCat = new OrganicCat(name,50,50,20,20,20);
+                    virtualPetShelter.admit(organicCat);
                 }else if (lifeForm.equalsIgnoreCase("organic") && animal.equalsIgnoreCase("dog")){
-                    new OrganicDog(name,50,50,20,20,20,0);
+                    System.out.println("insideeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+                    OrganicDog organicDog = new OrganicDog(name,50,50,20,20,20,0);
+                    virtualPetShelter.admit(organicDog);
                 }
             }
             virtualPetShelter.shelterTick();
