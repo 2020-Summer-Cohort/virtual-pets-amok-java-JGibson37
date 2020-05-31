@@ -1,6 +1,6 @@
 package pets_amok;
 
-public class OrganicCat extends VirtualPet implements Organic{
+public class OrganicCat extends VirtualPet implements Organic, Cat{
 
     protected int hunger;
     protected int thirst;

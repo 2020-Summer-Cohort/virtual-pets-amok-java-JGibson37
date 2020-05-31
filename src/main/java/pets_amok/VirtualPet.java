@@ -27,10 +27,9 @@ public abstract class VirtualPet {
         return health;
     }
 
-    public int boredom() {
-        boredom -= 5;
+    public void boredom() {
+        boredom -= 25;
         happiness += 10;
-        return boredom;
     }
 
     public int getBoredom(){

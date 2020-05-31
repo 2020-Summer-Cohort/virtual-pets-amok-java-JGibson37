@@ -7,42 +7,51 @@ public class VirtualPetShelter {
 
     ArrayList<VirtualPet> pets = new ArrayList<>();
 
+
     public ArrayList<VirtualPet> retrieveAllPets() {
         return pets;
     }
-    public List<VirtualPet> filterOrganicDog() {
-        List<VirtualPet> filteredOrganicDog = new ArrayList<>();
+
+    public List<VirtualPet> filterPets(Class<?> lifeFormClass, Class<?> petType) {
+        List<VirtualPet> filteredPets = new ArrayList<>();
         for (VirtualPet pet : pets) {
-            if (pet instanceof Dog && pet instanceof Organic) {
-                filteredOrganicDog.add(pet);
+            if (lifeFormClass.isInstance(pet) && petType == (null)) {
+                filteredPets.add(pet);
+            } else if (lifeFormClass.isInstance(pet) && petType.isInstance(pet)) {
+                filteredPets.add(pet);
             }
         }
-        return filteredOrganicDog;
+        return filteredPets;
     }
 
     public void admit(VirtualPet petToAdmit) {
         pets.add(petToAdmit);
     }
 
-    public void adopt(VirtualPet petToAdopt) {
-        pets.remove(petToAdopt);
+    public void realAdopt(String adoptee) {
+        for (VirtualPet pet : pets) {
+            if (pet.getName().equals(adoptee)) {
+                pets.remove(pet);
+            }
+        }
+
     }
 
     public void playWithPet(String name) {
         for (VirtualPet pet : pets) {
-            if (pet.getName() == name)
+            if (pet.getName().equals(name)) {
                 pet.boredom();
+            }
         }
     }
 
-    public String returnName(String name) {
-        String wrongName = "You've type a wrong name.";
+    public boolean returnName(String name) {
         for (VirtualPet pet : pets) {
-            if (pet.getName() == name) {
-                return name;
+            if (pet.getName().equals(name)) {
+                return true;
             }
         }
-        return wrongName;
+        return false;
     }
 
     public void feedAllPets() {
@@ -87,8 +96,24 @@ public class VirtualPetShelter {
                 }
             }
             pet.tickAll();
-            ((Organic) pet).organicTick();
-            ((Robotic) pet).roboticTick();
+            // ((Organic) pet).organicTick();
+            // ((Robotic) pet).roboticTick();
+        }
+    }
+
+    public void walkAllDogs() {
+        for (VirtualPet pet : pets) {
+            if (pet instanceof Dog) {
+                pet.boredom();
+            }
+        }
+    }
+
+    public void cleanCage(String input) {
+        for (VirtualPet pet : pets){
+            if (pet.equals(input) && pet instanceof Organic){
+                ((Dog) pet).resetCage();
+            }
         }
     }
 }
