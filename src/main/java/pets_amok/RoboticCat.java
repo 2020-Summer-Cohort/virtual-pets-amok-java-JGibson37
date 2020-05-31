@@ -18,4 +18,12 @@ public class RoboticCat extends VirtualPet implements Cat, Robotic{
     public void roboticTick() {
         oilLevel -= 5;
     }
+    @Override
+    public String toString() {
+        return name + "•"+
+                happiness + "•"+
+                health + "•"+
+                boredom + "•"+
+                oilLevel;
+    }
 }

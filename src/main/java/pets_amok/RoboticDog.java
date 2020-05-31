@@ -36,4 +36,12 @@ public class RoboticDog extends VirtualPet implements Robotic, Dog {
     @Override
     public void resetCage() {
     }
+    @Override
+    public String toString() {
+        return name + "•"+
+                happiness + "•"+
+                health + "•"+
+                boredom + "•"+
+                oilLevel;
+    }
 }

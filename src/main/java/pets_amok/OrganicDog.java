@@ -68,4 +68,14 @@ public class OrganicDog extends VirtualPet implements Dog, Organic {
             System.out.println("ATTENTION! " +name + " has dirtied their cage by " + largeRand);
         }
     }
+    @Override
+    public String toString() {
+        return name + "•"+
+                happiness + "•"+
+                health + "•"+
+                + boredom + "•"+
+                hunger + "•"+
+                + thirst + "•"+
+                dirtyCage;
+    }
 }

@@ -47,4 +47,12 @@ public abstract class VirtualPet {
         boredom += 5;
         happiness -= 5;
         }
+    @Override
+    public String toString() {
+        return name + "•"+
+                happiness + "•"+
+                + health + "•"+
+                + boredom ;
     }
+    }
+

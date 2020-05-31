@@ -35,4 +35,13 @@ public class OrganicCat extends VirtualPet implements Organic{
         thirst -= 5;
         happiness -= 10;
     }
+    @Override
+    public String toString() {
+        return name + "•"+
+                happiness + "•"+
+                health + "•"+
+                boredom + "•"+
+                hunger + "•"+
+                + thirst;
+    }
 }

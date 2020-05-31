@@ -1,6 +1,7 @@
 package pets_amok;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class VirtualPetShelter {
 
@@ -8,6 +9,15 @@ public class VirtualPetShelter {
 
     public ArrayList<VirtualPet> retrieveAllPets() {
         return pets;
+    }
+    public List<VirtualPet> filterOrganicDog() {
+        List<VirtualPet> filteredOrganicDog = new ArrayList<>();
+        for (VirtualPet pet : pets) {
+            if (pet instanceof Dog && pet instanceof Organic) {
+                filteredOrganicDog.add(pet);
+            }
+        }
+        return filteredOrganicDog;
     }
 
     public void admit(VirtualPet petToAdmit) {
