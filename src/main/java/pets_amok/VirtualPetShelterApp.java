@@ -84,7 +84,6 @@ public class VirtualPetShelterApp {
                     OrganicCat organicCat = new OrganicCat(name,50,50,20,20,20);
                     virtualPetShelter.admit(organicCat);
                 }else if (lifeForm.equalsIgnoreCase("organic") && animal.equalsIgnoreCase("dog")){
-                    System.out.println("insideeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
                     OrganicDog organicDog = new OrganicDog(name,50,50,20,20,20,0);
                     virtualPetShelter.admit(organicDog);
                 }
@@ -103,7 +102,6 @@ public class VirtualPetShelterApp {
         System.out.println("5. Play with a pet.");
         System.out.println("6. Adopt out a pet");
         System.out.println("7. Accept a pet into the shelter.");
-        System.out.println("8. Name and Description of all pets in the shelter.");
     }
 }
 

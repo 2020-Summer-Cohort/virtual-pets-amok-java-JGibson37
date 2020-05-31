@@ -12,13 +12,13 @@ public class OrganicCat extends VirtualPet implements Organic, Cat{
     }
     @Override
     public void feedPet() {
-        hunger += 10;
+        hunger -= 20;
         happiness += 20;
     }
 
     @Override
     public void waterPet() {
-        thirst =+ 10;
+        thirst -= 20;
         happiness += 20;
     }
     @Override
@@ -31,8 +31,8 @@ public class OrganicCat extends VirtualPet implements Organic, Cat{
     }
     @Override
     public void organicTick() {
-        hunger -= 5;
-        thirst -= 5;
+        hunger += 5;
+        thirst += 5;
         happiness -= 10;
     }
     @Override

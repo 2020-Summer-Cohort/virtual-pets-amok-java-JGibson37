@@ -94,10 +94,13 @@ public class VirtualPetShelter {
                     System.out.println(pet.name + "has ruined their cage. You are forced to clean it.");
                     ((Dog) pet).resetCage();
                 }
+                if(pet instanceof Organic) {
+                    ((Organic) pet).organicTick();
+                }else if(pet instanceof Robotic) {
+                    ((Robotic) pet).roboticTick();
+                }
             }
             pet.tickAll();
-            // ((Organic) pet).organicTick();
-            // ((Robotic) pet).roboticTick();
         }
     }
 

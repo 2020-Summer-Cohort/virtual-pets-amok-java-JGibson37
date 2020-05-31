@@ -20,13 +20,13 @@ public class OrganicDog extends VirtualPet implements Dog, Organic {
 
     @Override
     public void feedPet() {
-        hunger -= 5;
-        happiness += 10;
+        hunger -= 20;
+        happiness += 20;
     }
 
     @Override
     public void waterPet() {
-        thirst -= 5;
+        thirst -= 20;
         happiness += 10;
     }
     @Override
@@ -51,7 +51,7 @@ public class OrganicDog extends VirtualPet implements Dog, Organic {
 
     public void resetCage() {
         dirtyCage = 0;
-        happiness /= 2;
+        happiness /= 1.25;
     }
 
     @Override
