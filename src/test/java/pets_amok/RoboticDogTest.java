@@ -29,6 +29,6 @@ public class RoboticDogTest {
         RoboticDog underTest = new RoboticDog("Billy", 50, 50, 20, 20);
         underTest.walkAll();
         int result = underTest.getBoredom();
-        assertEquals(55, result);
+        assertEquals(-5, result);
     }
 }
