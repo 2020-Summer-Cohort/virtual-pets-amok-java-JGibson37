@@ -19,7 +19,7 @@ public abstract class VirtualPet {
         return name;
     }
 
-    public void health() {
+    public void addHealth() {
         health += 10;
     }
 
@@ -27,7 +27,7 @@ public abstract class VirtualPet {
         return health;
     }
 
-    public void boredom() {
+    public void play() {
         boredom -= 25;
         happiness += 10;
     }
@@ -44,7 +44,6 @@ public abstract class VirtualPet {
         happiness -= 5;
         health -= 5;
         boredom += 5;
-        happiness -= 5;
         }
     @Override
     public String toString() {

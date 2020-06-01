@@ -40,7 +40,7 @@ public class VirtualPetShelter {
     public void playWithPet(String name) {
         for (VirtualPet pet : pets) {
             if (pet.getName().equals(name)) {
-                pet.boredom();
+                pet.play();
             }
         }
     }
@@ -77,13 +77,6 @@ public class VirtualPetShelter {
         }
     }
 
-    public void cleanAllCages() {
-        for (VirtualPet pet : pets)
-            if (pet instanceof Dog && pet instanceof Organic) {
-                ((Dog) pet).resetCage();
-            }
-    }
-
     public void shelterTick() {
         for (VirtualPet pet : pets) {
             if (pet instanceof Organic && pet instanceof Dog) {
@@ -107,7 +100,7 @@ public class VirtualPetShelter {
     public void walkAllDogs() {
         for (VirtualPet pet : pets) {
             if (pet instanceof Dog) {
-                pet.boredom();
+                pet.play();
             }
         }
     }

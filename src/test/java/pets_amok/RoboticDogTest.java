@@ -18,17 +18,17 @@ public class RoboticDogTest {
         assertEquals(40, result);
     }
     @Test
-    public void amIRobotic(){
-        RoboticDog underTest = new RoboticDog("Billy", 50, 50, 20, 20);
-//        underTest.robotic();
-//        boolean result = underTest.robotic();
-//        assertEquals(true, result);
-    }
-    @Test
     public void createRoboticTick(){
         RoboticDog underTest = new RoboticDog("Billy", 50, 50, 20, 20);
         underTest.roboticTick();
         int result = underTest.getOilLevel();
         assertEquals(15, result);
+    }
+    @Test
+    public void createWalkAll(){
+        RoboticDog underTest = new RoboticDog("Billy", 50, 50, 20, 20);
+        underTest.walkAll();
+        int result = underTest.getBoredom();
+        assertEquals(55, result);
     }
 }

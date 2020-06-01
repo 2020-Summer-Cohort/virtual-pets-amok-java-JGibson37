@@ -15,15 +15,41 @@ public class VirtualPetShelterTest {
         assertThat(pets).containsOnlyOnce(testPet);
     }
     @Test
-    public void shouldFeedAllPets(){
-        OrganicDog testPet = new OrganicDog("Testy",50,50,20,20,20,20);
+    public void createPlayWithPet(){
         VirtualPetShelter underTest = new VirtualPetShelter();
-        underTest.admit(testPet);
-        Collection<VirtualPet> pets = underTest.retrieveAllPets();
+        String tina = "Tina";
+        underTest.playWithPet(tina);
     }
     @Test
-    public void oilAll(){
-        RoboticDog underTest = new RoboticDog("Billy", 50, 50, 20, 20);
-        underTest.addOil();
+    public void shouldFeedAllPets(){
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        underTest.feedAllPets();
+    }
+    @Test
+    public void createOilAllPets(){
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        underTest.oilAllPets();
+    }
+    @Test
+    public void createWaterAllPets(){
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        underTest.waterAllPets();
+    }
+    @Test
+    public void createWalkAllDogs(){
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        underTest.walkAllDogs();
+    }
+    @Test
+    public void createCleanCage(){
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        OrganicDog Tina = new OrganicDog("Tina",50,50,20,20,20,0);
+        String pet = "Tina";
+        underTest.cleanCage(pet);
+    }
+    @Test
+    public void createShelterTick(){
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        underTest.shelterTick();
     }
 }

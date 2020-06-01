@@ -13,6 +13,9 @@ public class RoboticCat extends VirtualPet implements Cat, Robotic{
     public void addOil() {
         oilLevel += 25;
     }
+    public int getOil(){
+        return oilLevel;
+    }
 
     @Override
     public void roboticTick() {

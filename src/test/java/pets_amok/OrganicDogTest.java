@@ -2,7 +2,9 @@ package pets_amok;
 
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class OrganicDogTest {
     @Test
@@ -26,23 +28,23 @@ public class OrganicDogTest {
     @Test
     public void createHunger(){
         OrganicDog underTest = new OrganicDog("Billy",50,50,20,20,20,5);
-//        underTest.Hunger();
+        underTest.feedPet();
         int result = underTest.getHunger();
-        assertEquals(15, result);
+        assertEquals(0, result);
     }
     @Test
     public void createThirst(){
         OrganicDog underTest = new OrganicDog("Billy",50,50,20,20,20,5);
-//        underTest.Thirst();
+        underTest.waterPet();
         int result = underTest.getThirst();
-        assertEquals(15, result);
+        assertEquals(0, result);
     }
     @Test
     public void createOrganicTick(){
         OrganicDog underTest = new OrganicDog("Billy",50,50,20,20,20,5);
         underTest.organicTick();
         int result = underTest.getDirtyCage();
-        assertEquals(10, result);
+        assertThat(result > 5 && result<15);
     }
     @Test
     public void makeHungryThirstyDirtyCageTick(){
@@ -52,10 +54,10 @@ public class OrganicDogTest {
         assertEquals(25, hunger);
         underTest.organicTick();
         int thirst = underTest.getThirst();
-        assertEquals(25, thirst);
+        assertEquals(30, thirst);
         underTest.organicTick();
         int dirty = underTest.getDirtyCage();
-        assertEquals(10, dirty);
+        assertTrue(dirty > 5 && dirty <30);
 
     }
 
